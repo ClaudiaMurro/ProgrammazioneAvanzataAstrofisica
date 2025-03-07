@@ -10,7 +10,7 @@
  *  1. Inizializzazione delle condizioni iniziali (densità, pressione, velocità, energia interna).
  *  2. Identificazione dei vicini per ciascuna particella utilizzando una griglia.
  *  3. Calcolo della densità con il metodo SPH.
- *  4. Calcolo della pressione utilizzando un'equazione di stato.
+ *  4. Calcolo della pressione utilizzando l'equazione di stato.
  *  5. Calcolo dell'accelerazione e della variazione di energia interna.
  *  6. Evoluzione temporale tramite il metodo di integrazione Kick-Drift-Kick (KDK).
  *  7. Salvataggio dei dati delle particelle e dei vicini a intervalli regolari.
@@ -334,11 +334,10 @@ void compute_accel() {
     }
 }
 
-//__________________________________________________________________________________cerco vicini
-/*
- * Funzione per calcolare i vicini di ogni particella utilizzando una griglia adattiva e un h variabile.
+//__________________________________________________________________________________ricerca vicini
+/* Funzione per calcolare i vicini di ogni particella utilizzando una griglia adattiva e un h variabile.
  * 1. Compute_smoothing_length(): 
- *    - Per ogni particella, calcola il valore ottimale di "h" (lunghezza di smorzamento) in modo adattivo, cercando di mantenere un numero costante di vicini (MAX_NEIGHBORS).
+ *    - Per ogni particella, calcola il valore ottimale di "h" (lunghezza di smorzamento) in modo adattivo.
  *    - Inizialmente, viene calcolato un valore iniziale di "h_start" e, attraverso un ciclo iterativo, viene regolato affinché l'intervallo [x - 2*h, x + 2*h] contenga esattamente MAX_NEIGHBORS particelle vicine. 
  *    - Se ci sono troppo pochi vicini, h_start viene aumentato; se ci sono troppi vicini, h_start viene diminuito.
  *
