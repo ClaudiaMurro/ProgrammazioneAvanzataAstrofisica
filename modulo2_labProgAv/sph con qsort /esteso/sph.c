@@ -10,7 +10,7 @@
  *  1. Inizializzazione delle condizioni iniziali (densità, pressione, velocità, energia interna).
  *  2. Identificazione dei vicini per ciascuna particella utilizzando un criterio di distanza (con un qsort).
  *  3. Calcolo della densità con il metodo SPH.
- *  4. Calcolo della pressione utilizzando un'equazione di stato.
+ *  4. Calcolo della pressione utilizzando l'equazione di stato.
  *  5. Calcolo dell'accelerazione e della variazione di energia interna.
  *  6. Evoluzione temporale tramite il metodo di integrazione Kick-Drift-Kick (KDK).
  *  7. Salvataggio dei dati delle particelle e dei vicini a intervalli regolari.
