@@ -7,12 +7,15 @@
 #-------------------------------------------------------------------------
 
 CC = gcc
-CFLAGS = -lm -w  # Disabilita tutti i warning con -w
-
+CFLAGS = -Wall -O2
+LIBS = -lm
 OBJ = decadimento.o main.o
 
 # Regola di default
 all: a.out
+
+a.out: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o a.out $(LIBS)
 
 # Compilazione di decadimento.o
 decadimento.o: decadimento.c decadimento.h
@@ -45,6 +48,4 @@ clean_result:
 # Pulizia di tutti i file prodotti
 clean_all: 
 	rm -f *.dat *.png *.o a.out
-
-
 
